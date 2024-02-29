@@ -5,11 +5,8 @@ export interface RunData {
 }
 
 export interface ServerData {
+	id: string,
 	run: RunData,
 	rootDirectory: string,
 	stop: string
-}
-
-export interface ServerListData {
-	[key: string]: ServerData
 }

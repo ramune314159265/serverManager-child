@@ -1,7 +1,8 @@
-import { ServerListData } from '../server/interfaces'
+import { ServerData } from '../server/interfaces'
 
-export const serverList: ServerListData = {
-	test: {
+export const serverList: Array<ServerData> = [
+	{
+		id: 'test',
 		run: {
 			command: "powershell.exe",
 			args: [],
@@ -10,4 +11,4 @@ export const serverList: ServerListData = {
 		stop: 'exit\r',
 		rootDirectory: 'D:/servers/minecraft_ramune/proxy'
 	}
-} as const
+] as const
