@@ -1,0 +1,14 @@
+import { ServerData } from '../server/interfaces'
+
+export const serverList: Array<ServerData> = [
+	{
+		id: 'example',
+		run: {
+			command: "powershell.exe",
+			args: [],
+			cwd: "C:/"
+		},
+		stop: 'exit\r',
+		rootDirectory: 'C:/'
+	}
+] as const
