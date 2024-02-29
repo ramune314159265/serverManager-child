@@ -1,10 +1,10 @@
-import { ServerList } from '../interfaces/serverData'
+import { ServerListData } from '../server/interfaces'
 
-export const serverList: ServerList = {
-	proxy: {
+export const serverList: ServerListData = {
+	test: {
 		run: {
-			command: "java.exe",
-			args: ["-Xmx512M", "-Xms512M", "-jar", "proxy.jar"],
+			command: "powershell.exe",
+			args: [],
 			cwd: "D:/servers/minecraft_ramune/proxy"
 		},
 		stop: 'stop\r',
