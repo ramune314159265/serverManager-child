@@ -20,6 +20,9 @@ export class Server {
 			rows: 24,
 			cwd: this.processData.rootDirectory
 		})
+		this.process.onExit(() => {
+			this.process = null
+		})
 	}
 	stop() {
 		if (this.process === null) {
@@ -28,7 +31,7 @@ export class Server {
 
 		this.process.write(this.processData.stop)
 	}
-	hardStop(){
+	hardStop() {
 		if (this.process === null) {
 			throw new Error('プロセスが起動していません')
 		}
