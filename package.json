@@ -9,6 +9,7 @@
     "lint": "eslint src",
     "fix": "eslint src --fix"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
