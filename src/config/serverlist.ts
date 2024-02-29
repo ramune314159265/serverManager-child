@@ -1,18 +1,4 @@
-interface Run {
-	command: string,
-	args: Array<string>,
-	cwd: string
-}
-
-interface Server {
-	run: Run,
-	rootDirectory: string,
-	stop: string
-}
-
-interface ServerList {
-	[key: string]: Server
-}
+import { ServerList } from '../interfaces/serverData'
 
 export const serverList: ServerList = {
 	proxy: {
