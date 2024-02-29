@@ -18,7 +18,7 @@ export class Server {
 			name: 'xterm-color',
 			cols: 80,
 			rows: 24,
-			cwd: this.processData.rootDirectory
+			cwd: this.processData.run.cwd
 		})
 		this.process.onExit(() => {
 			this.process = null
