@@ -21,4 +21,23 @@ export class Server {
 			cwd: this.processData.rootDirectory
 		})
 	}
+	stop() {
+		if (this.process === null) {
+			throw new Error('プロセスが起動していません')
+		}
+
+		this.process.write(this.processData.stop)
+	}
+	hardStop(){
+		if (this.process === null) {
+			throw new Error('プロセスが起動していません')
+		}
+
+		try {
+			this.process.kill()
+		} catch (error) {
+			console.error(error)
+		}
+
+	}
 }

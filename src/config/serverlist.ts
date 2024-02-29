@@ -7,7 +7,7 @@ export const serverList: ServerListData = {
 			args: [],
 			cwd: "D:/servers/minecraft_ramune/proxy"
 		},
-		stop: 'stop\r',
+		stop: 'exit\r',
 		rootDirectory: 'D:/servers/minecraft_ramune/proxy'
 	}
 } as const
