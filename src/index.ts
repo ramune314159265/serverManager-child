@@ -1,12 +1,8 @@
 import { serverList } from './config/serverlist'
 import { Server } from './server/server'
 
-const server = new Server(serverList.test)
+export const servers: { [key: string]: Server } = {}
 
-server.start()
-server.process?.onData?.(data => console.log(data))
-server.process?.onExit?.(()=>console.log('exit!!!'))
-
-setTimeout(() => {
-	server.hardStop()
-}, 5000)
+serverList.forEach(serverData => {
+	servers[serverData.id] = new Server(serverData)
+})
