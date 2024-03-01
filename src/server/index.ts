@@ -2,10 +2,12 @@ import pty from 'node-pty'
 import { ServerData } from './interfaces'
 
 export class Server {
+	id: string
 	process: pty.IPty | null
 	processData: ServerData
 
-	constructor(processData: ServerData) {
+	constructor(serverId: string, processData: ServerData) {
+		this.id = serverId
 		this.process = null
 		this.processData = processData
 	}
