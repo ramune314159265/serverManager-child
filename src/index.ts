@@ -1,4 +1,5 @@
 import { serverList } from './config/serverlist'
+import { wsConfigData } from './config/wsconnection'
 import { Server } from './server'
 
 
@@ -10,4 +11,4 @@ serverList.forEach(serverData => {
 
 import { wsClient } from './websocket'
 
-wsClient.connect('ws://localhost:8000/')
+wsClient.connect(wsConfigData.url)
