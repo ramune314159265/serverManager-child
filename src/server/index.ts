@@ -39,7 +39,7 @@ export class Server {
 		}
 
 		try {
-			this.process.kill()
+			process.kill(this.process.pid)
 		} catch (error) {
 			console.error(error)
 		}
