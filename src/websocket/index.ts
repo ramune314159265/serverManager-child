@@ -2,20 +2,9 @@ import WebSocket from 'websocket'
 import pty from 'node-pty'
 
 import { servers } from '..'
+import { receivedData, sendData } from './interfaces'
 
 export const wsClient: WebSocket.client = new WebSocket.client
-
-interface receivedData {
-	type: string,
-	serverId?: string,
-	content?: string
-}
-
-interface sendData {
-	type: string,
-	serverId?: string,
-	content?: string
-}
 
 const isIPty = (arg: unknown): arg is pty.IPty => {
 	return typeof (arg as pty.IPty)?.onData === 'function' &&
