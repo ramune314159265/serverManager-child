@@ -122,6 +122,30 @@ wsClient.on('connect', connection => {
 			}
 				break
 
+			case 'stop': {
+				const serverStopPromises = []
+
+				for (const server of Object.values(servers)) {
+					if (!isIPty(server.process)) {
+						continue
+					}
+
+					server.stop()
+					const serverStopPromise = new Promise<void>((resolve) => {
+						server?.process?.onExit(() => {
+							resolve()
+						})
+					})
+					serverStopPromises.push(serverStopPromise)
+				}
+
+				Promise.all(serverStopPromises).then(() => {
+					connection.close()
+					process.exit(0)
+				})
+			}
+				break
+
 			default:
 				break
 		}
