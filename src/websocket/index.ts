@@ -1,16 +1,11 @@
 import WebSocket from 'websocket'
-import pty from 'node-pty'
 
 import { servers } from '..'
 import { receivedData, sendData } from './interfaces'
+import { isIPty } from '../server/interfaces'
+import { allStop } from '../server/allstop'
 
 export const wsClient: WebSocket.client = new WebSocket.client
-
-const isIPty = (arg: unknown): arg is pty.IPty => {
-	return typeof (arg as pty.IPty)?.onData === 'function' &&
-		typeof (arg as pty.IPty)?.onExit === 'function' &&
-		typeof (arg as pty.IPty)?.write === 'function'
-}
 
 wsClient.on('connect', connection => {
 	connection.on('error', e => {
@@ -112,26 +107,11 @@ wsClient.on('connect', connection => {
 				break
 
 			case 'stop': {
-				const serverStopPromises = []
-
-				for (const server of Object.values(servers)) {
-					if (!isIPty(server.process)) {
-						continue
-					}
-
-					server.stop()
-					const serverStopPromise = new Promise<void>((resolve) => {
-						server?.process?.onExit(() => {
-							resolve()
-						})
+				allStop()
+					.then(() => {
+						connection.close()
+						process.exit(0)
 					})
-					serverStopPromises.push(serverStopPromise)
-				}
-
-				Promise.all(serverStopPromises).then(() => {
-					connection.close()
-					process.exit(0)
-				})
 			}
 				break
 
