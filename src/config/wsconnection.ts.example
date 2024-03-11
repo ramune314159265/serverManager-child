@@ -1,5 +1,6 @@
-import { wsConfig } from '../websocket/interfaces'
+import { config } from '../websocket/interfaces'
 
-export const wsConfigData: wsConfig = {
-	url: 'ws://localhost:8000/'
+export const wsConfigData: config = {
+	url: 'ws://localhost:8000/',
+	id: 'test'
 } as const

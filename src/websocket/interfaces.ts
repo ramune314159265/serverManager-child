@@ -1,5 +1,6 @@
-export interface wsConfig {
-	url: string
+export interface config {
+	url: string,
+	id: string
 }
 
 export interface receivedData {
