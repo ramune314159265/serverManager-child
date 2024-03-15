@@ -12,3 +12,5 @@ serverList.forEach(serverData => {
 import { wsClient } from './websocket'
 
 wsClient.connect(configData.url)
+
+process.on('uncaughtException', err => console.error('uncaughtException:', err))
