@@ -2,14 +2,14 @@ import WebSocket from 'websocket'
 
 import { receivedData } from './interfaces'
 import { receivedHandle } from './dataReceived'
-import { configData } from '../config/wsconnection'
+import { wsConfigData } from '../config/wsconnection'
 
 export const wsClient: WebSocket.client = new WebSocket.client
 
 wsClient.on('connect', connection => {
 	connection.send(JSON.stringify({
 		type: 'machine_info_send',
-		machineId: configData.id
+		machineId: wsConfigData.id
 	}))
 
 	connection.on('error', e => {

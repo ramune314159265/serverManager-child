@@ -1,5 +1,5 @@
 import { serverList } from './config/serverlist'
-import { configData } from './config/wsconnection'
+import { wsConfigData } from './config/wsconnection'
 import { Server } from './server'
 
 
@@ -11,6 +11,6 @@ serverList.forEach(serverData => {
 
 import { wsClient } from './websocket'
 
-wsClient.connect(configData.url)
+wsClient.connect(wsConfigData.url)
 
 process.on('uncaughtException', err => console.error('uncaughtException:', err))
