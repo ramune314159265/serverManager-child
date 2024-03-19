@@ -1,5 +1,5 @@
 import pty from 'node-pty'
-import { Server } from '.'
+import { Server } from './server'
 
 export interface RunData {
 	command: string,

@@ -1,6 +1,6 @@
 import WebSocket from 'websocket'
 
-import { servers } from '..'
+import { servers } from '../server/index'
 import { receivedData, sendData } from './interfaces'
 import { isIPty } from '../server/interfaces'
 import { allStop } from '../server/allstop'
