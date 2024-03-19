@@ -8,7 +8,7 @@ export const serverList: Array<ServerData> = [
 			args: [],
 			cwd: "C:/"
 		},
-		stop: 'exit\r',
+		stopHandle: (server) => server.process?.write?.('stop\r'),
 		rootDirectory: 'C:/'
 	}
 ] as const

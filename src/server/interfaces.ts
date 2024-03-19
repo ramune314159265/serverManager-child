@@ -1,4 +1,5 @@
 import pty from 'node-pty'
+import { Server } from '.'
 
 export interface RunData {
 	command: string,
@@ -10,7 +11,7 @@ export interface ServerData {
 	id: string,
 	run: RunData,
 	rootDirectory: string,
-	stop: string
+	stopHandle: (server: Server) => void
 }
 
 export const isIPty = (arg: unknown): arg is pty.IPty => {

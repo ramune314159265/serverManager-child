@@ -31,7 +31,7 @@ export class Server {
 			throw new Error('プロセスが起動していません')
 		}
 
-		this.process.write(this.processData.stop)
+		this.processData.stopHandle()
 	}
 	hardStop() {
 		if (this.process === null) {
