@@ -1,5 +1,5 @@
 import { isIPty } from './interfaces'
-import { servers } from '..'
+import { servers } from '../server/index'
 
 export const allStop = () => {
 	const serverStopPromises = []
