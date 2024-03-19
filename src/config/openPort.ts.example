@@ -1,4 +1,4 @@
-import { portData } from '../openPort/interfaces'
+import { portData, rootDeviceData } from '../openPort/interfaces'
 
 export const openPortlist: Array<portData> = [
 	{
@@ -23,3 +23,7 @@ export const openPortlist: Array<portData> = [
 		auto: true
 	}
 ]
+
+export const rootDeviceConfig: rootDeviceData = {
+	documentUrl: 'http://192.168.0.1:2869/upnp/rootdevice.xml'
+}

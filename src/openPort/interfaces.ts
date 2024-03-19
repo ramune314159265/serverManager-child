@@ -4,3 +4,7 @@ export interface portData {
 	protocol: string,
 	auto: boolean
 }
+
+export interface rootDeviceData {
+	documentUrl: string
+}

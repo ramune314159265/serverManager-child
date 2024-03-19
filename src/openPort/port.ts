@@ -1,5 +1,6 @@
 import NatAPI from '@silentbot1/nat-api'
 import { portData } from './interfaces'
+import { addPortMap, removePortMap } from './rootDevice'
 
 export class Port {
 	static client = new NatAPI({
@@ -19,17 +20,9 @@ export class Port {
 		this.isAuto = portInfo.auto
 	}
 	async open() {
-		await Port.client.map({
-			publicPort: this.port,
-			privatePort: this.port,
-			protocol: this.protocol
-		})
+		await addPortMap(this.port, this.protocol, 43200)
 	}
 	async close() {
-		await Port.client.unmap({
-			publicPort: this.port,
-			privatePort: this.port,
-			protocol: this.protocol
-		})
+		await removePortMap(this.port, this.protocol)
 	}
 }

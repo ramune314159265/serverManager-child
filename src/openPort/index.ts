@@ -1,5 +1,6 @@
 import { openPortlist } from '../config/openPortlist'
 import { Port } from './port'
+import  './rootDevice'
 
 export const ports: { [key: string]: Port } = {}
 
@@ -14,9 +15,8 @@ const autoOpenPortsIds: Array<string> = openPortlist
 const autoOpenPort = async () => {
 	for (let i = 0; i < autoOpenPortsIds.length; i++) {
 		await ports[autoOpenPortsIds[i]].open()
-		console.log(ports[autoOpenPortsIds[i]].port,ports[autoOpenPortsIds[i]].protocol)
+		console.log(ports[autoOpenPortsIds[i]].port, ports[autoOpenPortsIds[i]].protocol)
 	}
-	console.log(await Port.client.externalIp())
 }
 
 autoOpenPort()
