@@ -23,6 +23,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@silentbot1/nat-api": "^0.4.7",
     "node-pty": "^1.0.0",
     "websocket": "^1.0.34"
   }
