@@ -1,4 +1,4 @@
-import { openPortlist } from '../config/openPortlist'
+import { openPortlist } from '../config/openPort'
 import { Port } from './port'
 import  './rootDevice'
 

@@ -4,4 +4,4 @@ node_modules/
 build/
 src/config/serverlist.ts
 src/config/wsconnection.ts
-src/config/openPortlist.ts
+src/config/openPort.ts
