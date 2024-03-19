@@ -1,0 +1,25 @@
+import { portData } from '../openPort/interfaces';
+
+export const openPortlist: Array<portData> = [
+	{
+		id: 'minecraftje',
+		port: 25565,
+		protocol: 'TCP',
+		auto: true
+	}, {
+		id: 'minecraftbe',
+		port: 19132,
+		protocol: 'UDP',
+		auto: true
+	}, {
+		id: 'http',
+		port: 80,
+		protocol: 'TCP',
+		auto: false
+	}, {
+		id: 'https',
+		port: 443,
+		protocol: 'TCP',
+		auto: true
+	}
+]
