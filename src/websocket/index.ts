@@ -26,3 +26,5 @@ wsClient.on('connect', connection => {
 		receivedHandle(data, connection)
 	})
 })
+
+wsClient.connect(wsConfigData.url)
