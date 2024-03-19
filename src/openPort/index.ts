@@ -14,7 +14,9 @@ const autoOpenPortsIds: Array<string> = openPortlist
 const autoOpenPort = async () => {
 	for (let i = 0; i < autoOpenPortsIds.length; i++) {
 		await ports[autoOpenPortsIds[i]].open()
+		console.log(ports[autoOpenPortsIds[i]].port,ports[autoOpenPortsIds[i]].protocol)
 	}
+	console.log(await Port.client.externalIp())
 }
 
 autoOpenPort()

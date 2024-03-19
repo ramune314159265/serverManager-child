@@ -3,7 +3,10 @@ import { portData } from './interfaces'
 
 export class Port {
 	static client = new NatAPI({
-		gateway: '192.168.0.1'
+		gateway: '192.168.0.1',
+		enablePMP: true,
+		enableUPNP: true,
+		upnpPermanentFallback: false
 	})
 	id: string
 	port: number
@@ -22,7 +25,7 @@ export class Port {
 			protocol: this.protocol
 		})
 	}
-	async close(){
+	async close() {
 		await Port.client.unmap({
 			publicPort: this.port,
 			privatePort: this.port,

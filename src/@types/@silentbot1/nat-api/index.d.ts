@@ -2,7 +2,7 @@ declare module '@silentbot1/nat-api' {
 	interface INatAPIOptions {
 		ttl?: number,
 		autoUpdate?: boolean,
-		gateway: string,
+		gateway?: string,
 		enablePMP?: boolean,
 		enableUPNP?: boolean,
 		upnpPermanentFallback?: boolean
