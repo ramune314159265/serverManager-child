@@ -1,4 +1,4 @@
-import { portData } from '../openPort/interfaces';
+import { portData } from '../openPort/interfaces'
 
 export const openPortlist: Array<portData> = [
 	{
