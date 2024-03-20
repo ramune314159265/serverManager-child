@@ -36,10 +36,11 @@ export const discoverRootDeviceLocation = (): Promise<string | undefined> => {
 	return new Promise((resolve, reject) => {
 		client.on('response', (headers) => {
 			console.log(headers)
+			client.stop()
 			resolve(headers.LOCATION)
 		})
 
-		client.search('upnp:rootdevice')
+		client.search('urn:schemas-upnp-org:service:WANPPPConnection:1')
 
 		setTimeout(reject, 5000)
 	})

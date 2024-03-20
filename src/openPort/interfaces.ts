@@ -6,5 +6,5 @@ export interface portData {
 }
 
 export interface rootDeviceData {
-	documentUrl: string
+	documentUrl?: string
 }
