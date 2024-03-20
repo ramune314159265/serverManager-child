@@ -13,16 +13,20 @@ export class Port {
 	port: number
 	protocol: string
 	isAuto: boolean
+	isOpening: boolean
 	constructor(portId: string, portInfo: portData) {
 		this.id = portId
 		this.port = portInfo.port
 		this.protocol = portInfo.protocol
 		this.isAuto = portInfo.auto
+		this.isOpening = false
 	}
 	async open() {
 		await addPortMap(this.port, this.protocol, 43200)
+		this.isOpening = true
 	}
 	async close() {
 		await removePortMap(this.port, this.protocol)
+		this.isOpening = false
 	}
 }

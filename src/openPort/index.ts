@@ -1,6 +1,7 @@
 import { openPortlist } from '../config/openPort'
 import { Port } from './port'
 import  './rootDevice'
+import './rootDevice'
 
 export const ports: { [key: string]: Port } = {}
 
