@@ -5,3 +5,4 @@ build/
 src/config/serverlist.ts
 src/config/wsconnection.ts
 src/config/openPort.ts
+start.bat
