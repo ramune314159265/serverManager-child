@@ -27,4 +27,10 @@ wsClient.on('connect', connection => {
 	})
 })
 
+wsClient.once('connect', connection => {
+	connection.send(JSON.stringify({
+		type: 'machine_started'
+	}))
+})
+
 wsClient.connect(wsConfigData.url)
