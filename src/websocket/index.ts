@@ -28,9 +28,11 @@ wsClient.on('connect', connection => {
 })
 
 wsClient.once('connect', connection => {
-	connection.send(JSON.stringify({
-		type: 'machine_started'
-	}))
+	setTimeout(() => {
+		connection.send(JSON.stringify({
+			type: 'machine_started'
+		}))
+	}, 1000)
 })
 
 wsClient.connect(wsConfigData.url)
