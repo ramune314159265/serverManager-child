@@ -18,8 +18,8 @@ export class Server {
 
 		this.process = pty.spawn(this.processData.run.command, this.processData.run.args, {
 			name: 'xterm-color',
-			cols: 80,
-			rows: 24,
+			cols: 120,
+			rows: 30,
 			cwd: this.processData.run.cwd
 		})
 		this.process.onExit(() => {

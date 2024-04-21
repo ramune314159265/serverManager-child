@@ -1,7 +1,7 @@
 import WebSocket from 'websocket'
 
 import { servers } from '../server/index'
-import { receivedData, sendData } from './interfaces'
+import { consoleSizeData, receivedData, sendData } from './interfaces'
 import { isIPty } from '../server/interfaces'
 import { allStop } from '../server/allstop'
 
@@ -42,6 +42,11 @@ export const receivedHandle = (data: receivedData, connection: WebSocket.connect
 				serverId: server.id
 			}
 			connection.send(JSON.stringify(dataToSend))
+			const sizeData: consoleSizeData = {
+				col: server.process.cols,
+				row: server.process.rows
+			}
+			connection.send(JSON.stringify(sizeData))
 		}
 			break
 		case 'server_write_stdin': {
