@@ -17,6 +17,7 @@ export interface sendData {
 
 export interface consoleSizeData {
 	type: string,
+	serverId: string,
 	col: number,
 	row: number
 }

@@ -44,6 +44,7 @@ export const receivedHandle = (data: receivedData, connection: WebSocket.connect
 			connection.send(JSON.stringify(dataToSend))
 			const sizeData: consoleSizeData = {
 				type: 'resize',
+				serverId: server.id,
 				col: server.process.cols,
 				row: server.process.rows
 			}
