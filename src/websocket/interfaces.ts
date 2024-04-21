@@ -16,6 +16,7 @@ export interface sendData {
 }
 
 export interface consoleSizeData {
+	type: string,
 	col: number,
 	row: number
 }
