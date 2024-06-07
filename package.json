@@ -27,7 +27,7 @@
     "@silentbot1/nat-api": "^0.4.7",
     "internal-ip": "^8.0.0",
     "node-pty": "^1.0.0",
-    "node-ssdp": "^4.0.1",
+    "node-ssdp": "^1.0.0",
     "websocket": "^1.0.34",
     "xml-js": "^1.6.11"
   }
